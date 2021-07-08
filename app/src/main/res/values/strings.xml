@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">MobileDeviceProgramming</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
+    <string name="app_name">TV Broadcast</string>
+    <string name="tab_tv">TV Shows</string>
+    <string name="tab_movie">Movies</string>
+    <string name="poster_siaran_description">Poster Siaran</string>
+    <string name="add_broadcast">Add Broadcast</string>
 </resources>
