@@ -2,32 +2,30 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:padding="10dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="5dp">
+    android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/imagePoster"
+        android:id="@+id/spinnerIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/poster_siaran_description"
+        android:layout_marginStart="10dp"
+        android:contentDescription="@string/icon_type"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/f9_175x" />
+        app:tint="@color/black"
+        tools:src="@drawable/tv" />
 
     <TextView
-        android:id="@+id/ratingSiaran"
+        android:id="@+id/spinnerText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:background="@drawable/rating_bg"
-        android:paddingHorizontal="5dp"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/imagePoster"
-        app:layout_constraintTop_toTopOf="@+id/imagePoster"
-        tools:text="R" />
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerIcon"
+        app:layout_constraintStart_toEndOf="@+id/spinnerIcon"
+        app:layout_constraintTop_toTopOf="@+id/spinnerIcon"
+        tools:text="TV" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

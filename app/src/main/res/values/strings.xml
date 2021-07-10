@@ -2,6 +2,29 @@
     <string name="app_name">TV Broadcast</string>
     <string name="tab_tv">TV Shows</string>
     <string name="tab_movie">Movies</string>
-    <string name="poster_siaran_description">Poster Siaran</string>
+    <string name="poster_siaran_description">Broadcast Poster</string>
     <string name="add_broadcast">Add Broadcast</string>
+    <string name="synopsis">Synopsis</string>
+    <string name="broadcast_type">Broadcast Type</string>
+    <string name="schedule">Schedule</string>
+    <string name="days">Monday\nTuesday\nWednesday\nThursday\nFriday\nSaturday\nSunday</string>
+    <string name="title_activity_input">InputActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="save_broadcast">Save Broadcast</string>
+    <string name="poster_input">Poster Input</string>
+    <string name="hint_input_title">Title</string>
+    <string name="hint_input_synopsis">Synopsis</string>
+    <string name="icon_type">Icon Type</string>
+    <string name="set_genre">Set Genre</string>
+    <string name="type">Type</string>
+    <string name="set_schedule">Set Schedule</string>
+    <string name="no_genre_selected">No Genre Selected</string>
+    <string name="fab_edit">Edit Broadcast</string>
 </resources>

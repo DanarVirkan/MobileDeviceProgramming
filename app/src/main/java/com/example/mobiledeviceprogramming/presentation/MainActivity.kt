@@ -1,5 +1,6 @@
 package com.example.mobiledeviceprogramming.presentation
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
@@ -24,7 +25,8 @@ class MainActivity : AppCompatActivity() {
         tabs.setupWithViewPager(viewPager)
 
         binding.fabAdd.setOnClickListener {
-
+            val intent = Intent(this,InputActivity::class.java)
+            startActivity(intent)
         }
     }
 
