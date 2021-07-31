@@ -1,26 +1,28 @@
 package com.example.mobiledeviceprogramming.presentation
 
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mobiledeviceprogramming.R
 import com.example.mobiledeviceprogramming.databinding.ActivityDetailsBinding
 import com.example.mobiledeviceprogramming.domain.Siaran
 import com.example.mobiledeviceprogramming.utils.Constant.SIARAN
-import com.example.mobiledeviceprogramming.utils.DataDummy
-import com.example.mobiledeviceprogramming.utils.Mapper
 import com.google.android.material.appbar.AppBarLayout
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.lang.Math.abs
 
 class DetailsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailsBinding
+    private val viewModel: DetailsViewModel by viewModel()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val siaranObj = intent.getSerializableExtra(SIARAN) as Siaran
-        binding.posterDetail.setImageResource(siaranObj.cover)
+        val bitmap = BitmapFactory.decodeByteArray(siaranObj.cover, 0, siaranObj.cover!!.size)
+        binding.posterDetail.setImageBitmap(bitmap)
         binding.judulDetail.text = siaranObj.judul
         var res = R.drawable.movie
         if (siaranObj.tipe == "TV") {
@@ -28,10 +30,7 @@ class DetailsActivity : AppCompatActivity() {
         }
         binding.tipeDetail.setImageResource(res)
         binding.genreDetail.text = siaranObj.genre
-        val jamTayang = DataDummy.getJamTayang(siaranObj.idSiaran)
-        val mappedJamTayang = Mapper.mapJamTayang(jamTayang[0])
-        binding.hariTayang.text = mappedJamTayang[0].toString()
-        binding.jamTayang.text = mappedJamTayang[1].toString()
+        binding.jamTayang.text = siaranObj.jadwal
         binding.synopsisDetail.text = siaranObj.synopsis
         binding.ratingDetail.text = siaranObj.rating
 
@@ -48,6 +47,11 @@ class DetailsActivity : AppCompatActivity() {
             val intent = Intent(this, InputActivity::class.java)
             intent.putExtra(SIARAN, siaranObj)
             startActivity(intent)
+        }
+
+        binding.deleteDetail.setOnClickListener {
+            viewModel.deleteSiaran(siaranObj)
+            finish()
         }
     }
 }

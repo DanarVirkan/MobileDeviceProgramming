@@ -51,36 +51,36 @@ object DataDummy {
     )
     private val jamTayang = arrayListOf(jamMk, jamF9, jamConjuring, jamLoki)
 
-    fun getDataMovie(): ArrayList<Siaran> {
-        val dataArray = ArrayList<Siaran>()
-        for (i in 0 until judulMovie.size) {
-            val siaran = Siaran(
-                idMovie[0],
-                coverMovie[i], judulMovie[i], genreMovie[i],
-                synopsisMovie[i], ratingMovie[i], "Movie"
-            )
-            dataArray.add(siaran)
-        }
-        return dataArray
-    }
-
-    fun getDataTV(): ArrayList<Siaran> {
-        val dataArray = ArrayList<Siaran>()
-        for (i in 0 until judulTV.size) {
-            val siaran =
-                Siaran(
-                    idTV[0],
-                    coverTV[i],
-                    judulTV[i],
-                    genreTV[i],
-                    synopsisTV[i],
-                    ratingTV[i],
-                    "TV"
-                )
-            dataArray.add(siaran)
-        }
-        return dataArray
-    }
+//    fun getDataMovie(): ArrayList<Siaran> {
+//        val dataArray = ArrayList<Siaran>()
+//        for (i in 0 until judulMovie.size) {
+//            val siaran = Siaran(
+//                idMovie[0],
+//                coverMovie[i], judulMovie[i], genreMovie[i],
+//                synopsisMovie[i], ratingMovie[i], "Movie"
+//            )
+//            dataArray.add(siaran)
+//        }
+//        return dataArray
+//    }
+//
+//    fun getDataTV(): ArrayList<Siaran> {
+//        val dataArray = ArrayList<Siaran>()
+//        for (i in 0 until judulTV.size) {
+//            val siaran =
+//                Siaran(
+//                    idTV[0],
+//                    coverTV[i],
+//                    judulTV[i],
+//                    genreTV[i],
+//                    synopsisTV[i],
+//                    ratingTV[i],
+//                    "TV"
+//                )
+//            dataArray.add(siaran)
+//        }
+//        return dataArray
+//    }
 
     fun getJamTayang(id: String): ArrayList<JamTayang> {
         return jamTayang.filter {

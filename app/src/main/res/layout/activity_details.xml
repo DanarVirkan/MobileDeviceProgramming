@@ -122,46 +122,14 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:id="@+id/jamTayangContainer"
+            <TextView
+                android:id="@+id/jamTayang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:orientation="horizontal"
                 app:layout_constraintStart_toStartOf="@+id/jamTayangText"
-                app:layout_constraintTop_toBottomOf="@+id/jamTayangText">
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/hariTayang"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        tools:text="@string/days" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="25dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/jamTayang"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="16sp"
-                        tools:text="10.00-11.00 WIB" />
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
+                app:layout_constraintTop_toBottomOf="@+id/jamTayangText"
+                tools:text="Jadwal" />
 
             <TextView
                 android:id="@+id/synopsisText"
@@ -172,7 +140,7 @@
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/jamTayangContainer" />
+                app:layout_constraintTop_toBottomOf="@+id/jamTayang" />
 
             <TextView
                 android:id="@+id/synopsisDetail"
@@ -198,5 +166,14 @@
         android:src="@drawable/edit"
         app:layout_anchor="@id/appBarDetail"
         app:layout_anchorGravity="bottom|end" />
+
+    <Button
+        android:id="@+id/deleteDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/delete" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

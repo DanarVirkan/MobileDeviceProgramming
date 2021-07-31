@@ -1,6 +1,7 @@
 package com.example.mobiledeviceprogramming.presentation.main
 
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat.startActivity
@@ -10,11 +11,12 @@ import com.example.mobiledeviceprogramming.domain.Siaran
 import com.example.mobiledeviceprogramming.presentation.DetailsActivity
 import com.example.mobiledeviceprogramming.utils.Constant.SIARAN
 
-class SiaranAdapter(private val data: ArrayList<Siaran>) :
+class SiaranAdapter(private val data: List<Siaran>) :
     RecyclerView.Adapter<SiaranAdapter.SiaranViewHolder>() {
     class SiaranViewHolder(val binding: ItemsBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(siaran: Siaran) {
-            binding.imagePoster.setImageResource(siaran.cover)
+            val bitmap = BitmapFactory.decodeByteArray(siaran.cover,0,siaran.cover!!.size)
+            binding.imagePoster.setImageBitmap(bitmap)
             binding.ratingSiaran.text = siaran.rating
             binding.imagePoster.setOnClickListener {
                 val intent = Intent(binding.root.context, DetailsActivity::class.java)

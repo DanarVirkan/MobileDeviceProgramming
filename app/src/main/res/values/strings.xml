@@ -27,4 +27,7 @@
     <string name="set_schedule">Set Schedule</string>
     <string name="no_genre_selected">No Genre Selected</string>
     <string name="fab_edit">Edit Broadcast</string>
+    <string name="rating">Rating</string>
+    <string name="delete_fab">Delete Fab</string>
+    <string name="delete">Delete</string>
 </resources>

@@ -6,12 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.mobiledeviceprogramming.databinding.FragmentTabBinding
-import com.example.mobiledeviceprogramming.utils.DataDummy
+import com.example.mobiledeviceprogramming.presentation.MainViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class TabFragment : Fragment() {
 
     private var _binding: FragmentTabBinding? = null
     private val binding get() = _binding!!
+    private val viewModel: MainViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -20,12 +22,16 @@ class TabFragment : Fragment() {
 
         _binding = FragmentTabBinding.inflate(inflater, container, false)
         val data = if (arguments?.getString(TYPE) == "TV") {
-            DataDummy.getDataTV()
+            viewModel.setTV()
+            viewModel.getTV().observe(viewLifecycleOwner, {
+                binding.rvSiaran.adapter = SiaranAdapter(it)
+            })
         } else {
-            DataDummy.getDataMovie()
+            viewModel.setMovie()
+            viewModel.getMovie().observe(viewLifecycleOwner, {
+                binding.rvSiaran.adapter = SiaranAdapter(it)
+            })
         }
-
-        binding.rvSiaran.adapter = SiaranAdapter(data)
 
         return binding.root
     }
