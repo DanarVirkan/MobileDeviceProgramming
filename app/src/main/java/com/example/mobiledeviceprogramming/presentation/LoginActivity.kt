@@ -18,8 +18,14 @@ class LoginActivity : AppCompatActivity() {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             } else {
-                binding.loginUsername.error = "Username salah"
-                binding.loginPassword.error = "Password salah"
+                binding.loginUsername.error = ""
+                binding.loginPassword.error = ""
+                if (binding.loginUsername.editText!!.text.toString() != "admin") {
+                    binding.loginUsername.error = "Username salah"
+                }
+                if (binding.loginPassword.editText!!.text.toString() != "admin") {
+                    binding.loginPassword.error = "Password salah"
+                }
             }
         }
     }
